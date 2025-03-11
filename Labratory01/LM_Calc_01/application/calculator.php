@@ -10,13 +10,13 @@ if ( ! (isset($quota) && isset($stake) && isset($time))) {
 
 
 if ( $quota == "") {
-    $messages [] = 'Didnt get a number1';
+    $messages [] = 'Didnt get a quota';
 }
 if ( $time == "") {
-    $messages [] = 'Didnt get a number2';
+    $messages [] = 'Didnt get a time';
 }
 if ( $stake == "") {
-    $messages [] = 'Didnt get a number3';
+    $messages [] = 'Didnt get a stake';
 }
 
 
