@@ -39,9 +39,9 @@ if (empty( $messages )) {
 
 if (empty ( $messages )) {
 
-    $quota = intval($quota);
-    $time = intval($time);
-    $stake = intval($stake);
+    $quota = floatval($quota);
+    $time = floatval($time);
+    $stake = floatval($stake);
 
     if($quota<1000||$quota>5000000){
         $messages []= 'Incorrect quota';
