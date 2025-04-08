@@ -1,0 +1,66 @@
+{extends file="../templates/main.html"}
+
+{block name = content}
+
+<section id="main" class="wrapper">
+    
+<div class="pure-g">
+    <div class="l-box-lrg pure-u-1 pure-u-med-2-5">
+        <form class="pure-form pure-form-stacked">
+            <fieldset>
+
+                <label for="id_quota">Quota: </label>
+                <input id="id_quota" type="text" name="quota" value="{$form['quota']}" placeholder="1,000-5,000,000(PLN)" /><br />
+                <label for="id_time">Time:  </label>
+                <input id="id_time" type="text" name="time" value="{$form['time']}" placeholder="For how long(months)(1-420)" /><br />
+                <label for="id_stake">Stake: </label>
+                <input id="id_stake" type="text" name="stake" value="{$form['stake']}" placeholder="0%-700%" /><br />
+                <input type="submit" value="Calculate" />
+
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="l-box-lrg pure-u-1 pure-u-med-3-5">
+
+        {* wyświeltenie listy błędów, jeśli istnieją *}
+        {if isset($messages)}
+        {if count($messages) > 0}
+        <h4>Errors appear: </h4>
+        <ol class="err">
+            {foreach  $messages as $msg}
+            {strip}
+            <li>{$msg}</li>
+            {/strip}
+            {/foreach}
+        </ol>
+        {/if}
+        {/if}
+
+
+        {* wyświeltenie listy informacji, jeśli istnieją *}
+        {if isset($infos)}
+        {if count($infos) > 0}
+        <h4>Info: </h4>
+        <ol class="inf">
+            {foreach  $infos as $msg}
+            {strip}
+            <li>{$msg}</li>
+            {/strip}
+            {/foreach}
+        </ol>
+        {/if}
+        {/if}
+
+        {if isset($month_quot)}
+        <h4>Result</h4>
+        <p class="res">
+            {$month_quot}
+        </p>
+        {/if}
+
+
+    </div>
+</div>
+</section>
+{/block}
